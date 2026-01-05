@@ -1,1 +1,3 @@
 My personal website about technical and other interesting topics that I want to post and talk about. As of 1/4/2026, one post though...
+
+**Created using the Hugo Theme Template from Panr: https://github.com/panr/hugo-theme-terminal**
