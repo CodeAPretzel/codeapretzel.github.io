@@ -5,8 +5,30 @@
     <link>http://localhost:1313/</link>
     <description>Recent content on CodeAPretzel</description>
     <generator>Hugo</generator>
-    <language>en</language>
+    <language>en-us</language>
     <copyright>CodeAPretzel</copyright>
+    <lastBuildDate>Thu, 13 Jul 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HackABit-0x01 Finals</title>
+      <link>http://localhost:1313/posts/hack-a-bit-0x01-final/</link>
+      <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/hack-a-bit-0x01-final/</guid>
+      <description>&lt;h2 id=&#34;info--&#34;&gt;INFO -&lt;/h2&gt;&#xA;&lt;p&gt;HackABit (HAB), is a CTF competition that competitors try to exploit challenges to receive a flag hidden in a vulnerability to earn points in a leaderboard. Together, we will go over the challenges I was able to complete and my approach to them. &lt;strong&gt;Note:&lt;/strong&gt; the HAB domain is not active anymore.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;table-of-contents--&#34;&gt;Table of Contents -&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;🟢 dvGPT ________________________________________________________&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/posts/hack-a-bit-0x01-final/#leaky&#34;&gt;Leaky&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/posts/hack-a-bit-0x01-final/#extractor&#34;&gt;Extractor&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;🟢 Corruption ___________________________________________________&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/posts/hack-a-bit-0x01-final/#santa&#34;&gt;Santa&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/posts/hack-a-bit-0x01-final/#coredump&#34;&gt;Coredump&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;🟢 Triage _______________________________________________________&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/posts/hack-a-bit-0x01-final/#sluth&#34;&gt;Sluth&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/posts/hack-a-bit-0x01-final/#inspector&#34;&gt;Inspector&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/posts/hack-a-bit-0x01-final/#coverup&#34;&gt;Coverup&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;🟢 Range ________________________________________________________&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/posts/hack-a-bit-0x01-final/#connection&#34;&gt;Connection&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/posts/hack-a-bit-0x01-final/#rightface&#34;&gt;Rightface&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/posts/hack-a-bit-0x01-final/#leftface&#34;&gt;Leftface&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;If you want the full writeups and all of their challenges, check out the following link: &lt;a href=&#34;https://github.com/Shift-Cyber/hab-challenges-public/tree/main/0x01/round_3&#34;&gt;&lt;code&gt;here&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;h1 id=&#34;hello&#34;&gt;Hello!&lt;/h1&gt;&#xA;&lt;p&gt;I&amp;rsquo;m &lt;code&gt;CodeAPretzel&lt;/code&gt; / &lt;code&gt;CorridorMethod&lt;/code&gt; / &lt;code&gt;PretzelMano&lt;/code&gt; (whichever name I feel like using). This site won&amp;rsquo;t hold much other than blogs and technical topics that I want to write about.&lt;/p&gt;&#xA;&lt;p&gt;If you want to see my other socials, you can check out the &lt;a href=&#34;http://localhost:1313/contact/&#34;&gt;contact&lt;/a&gt; page.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>http://localhost:1313/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contact/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Discord:&lt;/strong&gt; &lt;code&gt;corridormethod&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Github:&lt;/strong&gt; &lt;a href=&#34;https://github.com/CodeAPretzel&#34;&gt;&lt;code&gt;CodeAPretzel&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Twitter:&lt;/strong&gt; &lt;a href=&#34;https://x.com/PretzelMano&#34;&gt;&lt;code&gt;PretzelMano&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

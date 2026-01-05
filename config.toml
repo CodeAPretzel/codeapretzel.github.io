@@ -93,7 +93,7 @@ pagination.pagerSize = 5
 [languages]
   [languages.en]
     languageName = "English"
-	title = "CodeAPretzel"
+    title = "CodeAPretzel"
     subtitle = ""
     owner = ""
     keywords = ""
@@ -134,4 +134,4 @@ pagination.pagerSize = 5
   # --
   # replacements = "github.com/panr/hugo-theme-terminal/v4 -> themes/terminal"
 [[module.imports]]
-  path = 'terminal'
+  path = 'github.com/hugomods/katex'

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title> :: CodeAPretzel</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Challenge ~ With access to 10.128.0.5 your goal is to escelate priveleges to the breakme-harder user. Ultimately your goal is simply to read out the flag in /home/breakme-harder/. range.final.hackabit.com
+Solution ~ From the previous challenge Rightface, we are still in the shell and are told to read a text file in the directory of the breakme-harder user. Using just cat will not work because we don&rsquo;t have the premissions to do so. Instead, we look at the files given to us in the breakme user:
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="http://localhost:1313/posts/hack-a-bit-0x01-final/range/leftface/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terminal.min.50c1c942103c94ef5432d9afaa80aa682032f33887783e3118cfa9ac29b946be.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="http://localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="https://x.com/PretzelMano" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="">
+<meta property="og:description" content="Challenge ~ With access to 10.128.0.5 your goal is to escelate priveleges to the breakme-harder user. Ultimately your goal is simply to read out the flag in /home/breakme-harder/. range.final.hackabit.com
+Solution ~ From the previous challenge Rightface, we are still in the shell and are told to read a text file in the directory of the breakme-harder user. Using just cat will not work because we don&rsquo;t have the premissions to do so. Instead, we look at the files given to us in the breakme user:
+" />
+<meta property="og:url" content="http://localhost:1313/posts/hack-a-bit-0x01-final/range/leftface/" />
+<meta property="og:site_name" content="CodeAPretzel" />
+
+  <meta property="og:image" content="http://localhost:1313/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    CodeAPretzel
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+        
+          <li><a href="/featured">Featured Posts</a></li>
+        
+      
+        
+          <li><a href="/posts">Other Posts</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about" >About</a></li>
+        
+      
+        
+          <li><a href="/contact" >Contact</a></li>
+        
+      
+      
+        <li>
+          <ul class="menu">
+            <li class="menu__trigger">Show more&nbsp;▾</li>
+            <li>
+              <ul class="menu__dropdown">
+                
+                  
+                    <li><a href="/featured" >Featured Posts</a></li>
+                  
+                
+                  
+                    <li><a href="/posts" >Other Posts</a></li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="http://localhost:1313/posts/hack-a-bit-0x01-final/range/leftface/"></a>
+  </h1>
+  <div class="post-meta"></div>
+
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <h2 id="challenge-">Challenge ~<a href="#challenge-" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>With access to <code>10.128.0.5</code> your goal is to escelate priveleges to the <code>breakme-harder</code> user. Ultimately your goal is simply to read out the flag in <code>/home/breakme-harder/</code>.
+<!-- raw HTML omitted --></p>
+<p><code>range.final.hackabit.com</code></p>
+<h2 id="solution-">Solution ~<a href="#solution-" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>From the previous challenge <code>Rightface</code>, we are still in the shell and are told to read a text file in the directory of the <code>breakme-harder</code> user. Using just cat will not work because we don&rsquo;t have the premissions to do so. Instead, we look at the files given to us in the <code>breakme</code> user:</p>
+<pre tabindex="0"><code>-$ ls -l
+
+## Looks something like:
+
+escalator
+escalator.c
+flag.txt
+</code></pre><p>The <!-- raw HTML omitted -->C<!-- raw HTML omitted --> script <code>escalator.c</code> seems interesting. Upon further investigation into the file we get:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">FILE</span> <span class="o">*</span><span class="n">file</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Check if a filename argument is provided
+</span></span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Open the file in read mode
+</span></span></span><span class="line"><span class="cl">    <span class="n">file</span> <span class="o">=</span> <span class="nf">fopen</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">&#34;r&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="c1">// Check if the file was opened successfully
+</span></span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">file</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;An error occured.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Read and print each character from the file
+</span></span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">((</span><span class="n">ch</span> <span class="o">=</span> <span class="nf">fgetc</span><span class="p">(</span><span class="n">file</span><span class="p">))</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">putchar</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Close the file
+</span></span></span><span class="line"><span class="cl">    <span class="nf">fclose</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Apparently the script takes the argument of a file and displays the contents. Also, told to me by another competitor, this file&rsquo;s SUID is owned by <code>breakme-harder</code> meaning that running this would be like <code>breakme-harder</code> is running this. Now all we have to do is run the file and have the file as the argument:</p>
+<pre tabindex="0"><code>-$ ./escalator /home/breakme-harder/flag.txt
+-$ flag{evaluate_this_my_dude}
+</code></pre><!-- raw HTML omitted -->
+<h2 id="final-notes-">Final Notes ~<a href="#final-notes-" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>I would have done the last challenge <code>Aboutface</code> and the <code>King of the Hill</code> parts as well, however the KOTH was on the host of <code>Aboutface</code> and that shutdown in a little bit over a day into the competition. I would have, and should have, done the KOTH sooner but I was too focused on the other challenges.</p>
+<p>Funny enough, the main reason why no one was able to get back into the main servers is because one of the competitors ran a <!-- raw HTML omitted -->FORKBOMB<!-- raw HTML omitted --> 💀 on the server at the end of the competition.</p>
+<p>However, it was funny and was awesome to see something burn and fall apart in the end, like fireworks. All in all, this competition was a blast and can&rsquo;t wait for 0x02!</p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="http://localhost:1313/posts/hack-a-bit-0x01-final/range/connection/" class="button inline prev">
+        &lt; [<span class="button__text"></span>]
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="http://localhost:1313/posts/hack-a-bit-0x01-final/range/rightface/" class="button inline next">
+         [<span class="button__text"></span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>CodeAPretzel</span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
