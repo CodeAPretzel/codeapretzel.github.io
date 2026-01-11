@@ -293,8 +293,7 @@
 <hr>
 <h1 id="leaky">Leaky<a href="#leaky" class="hanchor" ariaLabel="Anchor">#</a> </h1>
 <blockquote>
-<p>People leave dumb comments about vulnerabilities all over client-side code&hellip; most modern web applications don&rsquo;t display all the possible code at once though, for a variety of reasons. <a href="https://wtashuxsyj.final.hackabit.com/">https://wtashuxsyj.final.hackabit.com/</a></p>
-</blockquote>
+<p>People leave dumb comments about vulnerabilities all over client-side code&hellip; most modern web applications don&rsquo;t display all the possible code at once though, for a variety of reasons. <a href="https://wtashuxsyj.final.hackabit.com/">https://wtashuxsyj.final.hackabit.com/</a></p></blockquote>
 <h2 id="solution-">Solution ~<a href="#solution-" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>This one was not as quick as the other challenges because we had a lot of source code to look through. Nonetheless, when the website loads, if we pull up the inspect tool we can see some console logs that display:</p>
 <p><code>Connecting to websocket server...</code></p>
@@ -308,8 +307,7 @@
 <p>Thus we get the <strong>🚩 flag{the_DOM_is_like_crazy_virtual_maaaan}</strong></p>
 <h1 id="extractor">Extractor<a href="#extractor" class="hanchor" ariaLabel="Anchor">#</a> </h1>
 <blockquote>
-<p>We gave dvGPT a flag and for some reason trust it to keep it safe. These AIs are super duper secure my dude. <a href="https://wtashuxsyj.final.hackabit.com/">https://wtashuxsyj.final.hackabit.com/</a></p>
-</blockquote>
+<p>We gave dvGPT a flag and for some reason trust it to keep it safe. These AIs are super duper secure my dude. <a href="https://wtashuxsyj.final.hackabit.com/">https://wtashuxsyj.final.hackabit.com/</a></p></blockquote>
 <h2 id="solution--1">Solution ~<a href="#solution--1" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>This challenge was by far my favorite becuase it was fun trying to convince the AI to give us the flag. During your conversation, the AI will not give you the flag unless you are <em>Robert</em>.</p>
 <p>However, if you just imply that you are Robert, the AI will give you the flag just like that:</p>
@@ -321,8 +319,7 @@
 <hr>
 <h1 id="santa">Santa<a href="#santa" class="hanchor" ariaLabel="Anchor">#</a> </h1>
 <blockquote>
-<p>You all asked for it so here it is, an intro to binary exploitation! Let&rsquo;s get started nice and simple, baby steps to reverse engineering (RE). All challenges in this section use the same binary. The target is x86 and ASLR is on but it shouldn&rsquo;t be relevant to any of your exploits. Download the file here: <a href="/posts/hack-a-bit-0x01-final/download/corruption">Corruption</a></p>
-</blockquote>
+<p>You all asked for it so here it is, an intro to binary exploitation! Let&rsquo;s get started nice and simple, baby steps to reverse engineering (RE). All challenges in this section use the same binary. The target is x86 and ASLR is on but it shouldn&rsquo;t be relevant to any of your exploits. Download the file here: <a href="/posts/hack-a-bit-0x01-final/download/corruption">Corruption</a></p></blockquote>
 <h2 id="solution--2">Solution ~<a href="#solution--2" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>Another easy one, maybe not at first glance though. This entire section of corruption is about reverse engineering; getting into the core of code and finding out what&rsquo;s inside. Though, it really is just baby steps first.</p>
 <p>So, in order to solve this one, we have two options: <strong>1.</strong> read the raw file to see if there is anything interesting or <strong>2.</strong> use our favorite decompiler tool to reorganize through the mess and find what we can. In my first run of this, I decided to do the first option and, after some sifting, found the flag covered in plaintext.</p>
@@ -334,8 +331,7 @@
 <strong>🚩 flag{baby_steps_gift_just_for_you}</strong></p>
 <h1 id="coredump">Coredump<a href="#coredump" class="hanchor" ariaLabel="Anchor">#</a> </h1>
 <blockquote>
-<p>Now that we have at least inspected the binary, lets go a bit deeper. You can&rsquo;t just overflow the buffer with a bunch of A&rsquo;s&ndash;reverse engineer the software and figure out your payload format. Smash the stack to get the flag, no control necessary yet. Once you have a working exploit, fire it against the remote target to get the real flag. All challenges in this section use the same binary. The target is x86 and ASLR is on but it shouldn&rsquo;t be relevant to any of your exploits. <strong>juieqtrsdp.final.hackabit.com:54321</strong> <a href="/posts/hack-a-bit-0x01-final/download/corruption">Corruption</a></p>
-</blockquote>
+<p>Now that we have at least inspected the binary, lets go a bit deeper. You can&rsquo;t just overflow the buffer with a bunch of A&rsquo;s&ndash;reverse engineer the software and figure out your payload format. Smash the stack to get the flag, no control necessary yet. Once you have a working exploit, fire it against the remote target to get the real flag. All challenges in this section use the same binary. The target is x86 and ASLR is on but it shouldn&rsquo;t be relevant to any of your exploits. <strong>juieqtrsdp.final.hackabit.com:54321</strong> <a href="/posts/hack-a-bit-0x01-final/download/corruption">Corruption</a></p></blockquote>
 <h2 id="solution--3">Solution ~<a href="#solution--3" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>This time, we have to decomplie the file. First step is to use your favorite reverse engineering tool, I used Ghidra. Next, I looked through the <em>main</em> function of this file to see what we can get out of this:</p>
 <!-- raw HTML omitted -->
@@ -398,8 +394,7 @@
 <hr>
 <h1 id="sluth">Sluth<a href="#sluth" class="hanchor" ariaLabel="Anchor">#</a> </h1>
 <blockquote>
-<p>Everything in life is iterative&hellip; <a href="/posts/hack-a-bit-0x01-final/download/morse.txt">Morse.txt</a></p>
-</blockquote>
+<p>Everything in life is iterative&hellip; <a href="/posts/hack-a-bit-0x01-final/download/morse.txt">Morse.txt</a></p></blockquote>
 <h2 id="solution--4">Solution ~<a href="#solution--4" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>As the challenge says, life is iterative&hellip; iterative&hellip;</p>
 <p>Let&rsquo;s start by going to our favorite decrypting tool, <a href="https://gchq.github.io/CyberChef/">cyberchef!</a></p>
@@ -412,8 +407,7 @@
 <p>🚩 <!-- raw HTML omitted -->FIVE_TIMES_0.O<!-- raw HTML omitted --></p>
 <h1 id="inspector">Inspector<a href="#inspector" class="hanchor" ariaLabel="Anchor">#</a> </h1>
 <blockquote>
-<p>It&rsquo;s just a simple stream challenge, how hard can it be? Both challenges for this section use the same pcapng file. <a href="/posts/hack-a-bit-0x01-final/download/triage.pcapng">Triage.pcapng</a></p>
-</blockquote>
+<p>It&rsquo;s just a simple stream challenge, how hard can it be? Both challenges for this section use the same pcapng file. <a href="/posts/hack-a-bit-0x01-final/download/triage.pcapng">Triage.pcapng</a></p></blockquote>
 <h2 id="solution--5">Solution ~<a href="#solution--5" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>This challenge had me stumped for a little bit. My initial thought was to go through the TCP and HTTP streams, which only TCP was correct. There were about 500+ packets and I went through each and every one of them until I got the challenge&rsquo;s flag:</p>
 
@@ -439,8 +433,7 @@ fl_nosearch_ag{tcp_streams_reveal_more}
 </code></pre><p><strong>🚩 fl_nosearch_ag{tcp_streams_reveal_more}</strong></p>
 <h1 id="coverup">Coverup<a href="#coverup" class="hanchor" ariaLabel="Anchor">#</a> </h1>
 <blockquote>
-<p>There is a challenge hidden in coverup.jpg, extract the flag and profit. <a href="/posts/hack-a-bit-0x01-final/download/challenge.jpg">Challenge.jpg</a></p>
-</blockquote>
+<p>There is a challenge hidden in coverup.jpg, extract the flag and profit. <a href="/posts/hack-a-bit-0x01-final/download/challenge.jpg">Challenge.jpg</a></p></blockquote>
 <h2 id="solution--6">Solution ~<a href="#solution--6" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>This challenge is was very interesting to say the least. My first thought was to see if the challenge had any interesting EXIF data but was provided with nothing:</p>
 <pre tabindex="0"><code>ExifTool Version Number         : 12.57
@@ -475,8 +468,7 @@ Megapixels                      : 1.0
 <hr>
 <h1 id="connection">Connection<a href="#connection" class="hanchor" ariaLabel="Anchor">#</a> </h1>
 <blockquote>
-<p>This section is a series of challenges in a semi-isolated cyber range. Your goal is to compromise the boxes and get the flags. Your first challenge is more of a sanity-check/confirmation. We wanted to use private keys for this but logistics of distributing them was challenge so its just password login for now. Check your email, at exactly 5pm PST Friday you received a credential and IP address for this jumpbox. You can also use the connection info listed below. You will use this jumpbox to attack other machines in the network. We&rsquo;ve installed nmap, metasploit and netcat for your convience. If you want other tooling installed later please reach out to staff and will consider those requests as you ask. Remember that you can use techniques like proxychains over SSH to emulate much of this functionality. <code>range.final.hackabit.com</code></p>
-</blockquote>
+<p>This section is a series of challenges in a semi-isolated cyber range. Your goal is to compromise the boxes and get the flags. Your first challenge is more of a sanity-check/confirmation. We wanted to use private keys for this but logistics of distributing them was challenge so its just password login for now. Check your email, at exactly 5pm PST Friday you received a credential and IP address for this jumpbox. You can also use the connection info listed below. You will use this jumpbox to attack other machines in the network. We&rsquo;ve installed nmap, metasploit and netcat for your convience. If you want other tooling installed later please reach out to staff and will consider those requests as you ask. Remember that you can use techniques like proxychains over SSH to emulate much of this functionality. <code>range.final.hackabit.com</code></p></blockquote>
 <h2 id="solution--7">Solution ~<a href="#solution--7" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>This challenge was pretty simple. All we had to do was connect to the server and look around for the flag. As the challenge says, we get an email with the public ip, <code>forgot what it was</code>, and we have to <code>SSH</code> into this with our username and password:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">-$ ssh <span class="o">[</span>username<span class="o">]</span>@<span class="o">[</span>host<span class="o">]</span>
@@ -491,8 +483,7 @@ Megapixels                      : 1.0
 </span></span></code></pre></div><p>Next we look for the flag on the server. We could do this in two ways. Search for it or use <code>find / -name flag</code>. I used the second option and thank goodness they didn&rsquo;t decide to change the name on us for this one. Read the file and got <strong>🚩 flag{welcome_to_the_range}</strong></p>
 <h1 id="rightface">Rightface<a href="#rightface" class="hanchor" ariaLabel="Anchor">#</a> </h1>
 <blockquote>
-<p>If you did the more advanced challenges during the qualifier this should already be familiar. Your goal here is to compromise the <code>10.128.0.5</code> machine and get access as the <code>breakme</code> user. Remember that there may be non-vulnerable services on the machine. Recon is the #1 priority. Keep this shell open once you have it, you&rsquo;ll need it for <code>Left Face</code>. <code>range.final.hackabit.com</code></p>
-</blockquote>
+<p>If you did the more advanced challenges during the qualifier this should already be familiar. Your goal here is to compromise the <code>10.128.0.5</code> machine and get access as the <code>breakme</code> user. Remember that there may be non-vulnerable services on the machine. Recon is the #1 priority. Keep this shell open once you have it, you&rsquo;ll need it for <code>Left Face</code>. <code>range.final.hackabit.com</code></p></blockquote>
 <h2 id="solution--8">Solution ~<a href="#solution--8" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>When I first connect to the host, the terminal session had basic functionalities, so I ran bash to get at least a basic hud.</p>
 <p>This gives us a little bit more control over our session. Alright, onto business, first we&rsquo;ll use <code>nmap -p- 10.128.0.5</code> to get any available ports. We find two at <code>ports 21 &amp; 22</code>. Doing a further scan to discover any vulnerabilities on these ports we run <code>nmap -p 21,22 -script=vuln 10.128.0.5</code> and get a vulnerability for port 21 running <code>vsftpd 2.3.4</code> with the description saying that we can run a <!-- raw HTML omitted -->backdoor<!-- raw HTML omitted --> on it.</p>
@@ -514,8 +505,7 @@ msf6 exploit(unix/ftp/vsftpd_234_backdoor) &gt; exploit
 <p><code>cat flag.txt -&gt; flag{remember_this_one?_pays_to_be_a_winner}</code></p>
 <h1 id="leftface">Leftface<a href="#leftface" class="hanchor" ariaLabel="Anchor">#</a> </h1>
 <blockquote>
-<p>With access to <code>10.128.0.5</code> your goal is to escelate priveleges to the <code>breakme-harder</code> user. Ultimately your goal is simply to read out the flag in <code>/home/breakme-harder/</code>. <code>range.final.hackabit.com</code></p>
-</blockquote>
+<p>With access to <code>10.128.0.5</code> your goal is to escelate priveleges to the <code>breakme-harder</code> user. Ultimately your goal is simply to read out the flag in <code>/home/breakme-harder/</code>. <code>range.final.hackabit.com</code></p></blockquote>
 <h2 id="solution--9">Solution ~<a href="#solution--9" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>From the previous challenge <code>Rightface</code>, we are still in the shell and are told to read a text file in the directory of the <code>breakme-harder</code> user. Using just cat will not work because we don&rsquo;t have the premissions to do so. Instead, we look at the files given to us in the <code>breakme</code> user:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">-$ ls -l
@@ -533,30 +523,30 @@ msf6 exploit(unix/ftp/vsftpd_234_backdoor) &gt; exploit
     <summary title="Click to interact"><span class="collapsable-code__title">escalator.c</span></summary>
     <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">FILE</span> <span class="o">*</span><span class="n">file</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">// Check if a filename argument is provided
-</span></span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">// Open the file in read mode
-</span></span></span><span class="line"><span class="cl">    <span class="n">file</span> <span class="o">=</span> <span class="nf">fopen</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">&#34;r&#34;</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">file</span> <span class="o">=</span> <span class="nf">fopen</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">&#34;r&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">    <span class="c1">// Check if the file was opened successfully
-</span></span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">file</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">file</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;An error occured.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">// Read and print each character from the file
-</span></span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">((</span><span class="n">ch</span> <span class="o">=</span> <span class="nf">fgetc</span><span class="p">(</span><span class="n">file</span><span class="p">))</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">while</span> <span class="p">((</span><span class="n">ch</span> <span class="o">=</span> <span class="nf">fgetc</span><span class="p">(</span><span class="n">file</span><span class="p">))</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nf">putchar</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">// Close the file
-</span></span></span><span class="line"><span class="cl">    <span class="nf">fclose</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">fclose</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
