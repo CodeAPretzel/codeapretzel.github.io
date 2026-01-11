@@ -28,8 +28,12 @@
 {{- end }}
 
 <!-- Icons -->
-<link rel="shortcut icon" href="{{ "favicon.png" | absURL }}">
-<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
+{{ if isset $.Site.Params "favicon" }}
+  <link rel="shortcut icon" href="{{ $.Site.Params.favicon | absURL }}">
+{{ else }}
+  <link rel="shortcut icon" href="{{ "favicon.png" | absURL }}">
+  <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
+{{ end }}
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary" />
