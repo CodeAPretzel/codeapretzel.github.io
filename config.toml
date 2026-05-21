@@ -125,9 +125,9 @@ pagination.pagerSize = 5
         name = "Other Posts"
         url = "/posts"
       [[languages.en.menu.main]]
-        identifier = "contact"
-        name = "Contact"
-        url = "/contact"
+        identifier = "socials"
+        name = "Socials"
+        url = "/socials"
 
 [module]
   # In case you would like to make changes to the theme and keep it locally in you repository,
